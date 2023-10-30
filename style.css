@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #2c3e50;
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+    color: #ecf0f1;
+}
+
+/* Top bar menu styling */
+.top-bar {
+    padding: 10px; /* Increased padding for better spacing */
+    height: 60px; /* Increased height for better visibility */
+    width: 100%;
+    position: fixed;
+    background-color: #3498db; /* Changed top bar background color */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Font Awesome Icons */
+.fas,
+.fa {
+    font-size: 30px; /* Increased icon size */
+    background-color: #ccc; /* Changed icon background color */
+    color: #333; /* Changed icon color */
+    padding: 10px; /* Increased padding for better spacing */
+    border-radius: 50%; /* Rounded icon */
+    width: 50px; /* Increased width for better visibility */
+    height: 50px; /* Increased height for better visibility */
+    text-align: center;
+    cursor: pointer;
+}
+
+.fas:hover {
+    background-color: #66d9ff; /* Changed background color on hover */
+    color: #fff; /* Changed icon color on hover */
+    filter: brightness(90%);
+}
+
+  /* Tool-specific Icon Styles */
+.fa-palette {
+    cursor: not-allowed; /* Changed cursor style */
+}
+
+.fa-trash:hover,
+.fa-times-circle:hover {
+    color: #ff5733; /* Changed color on hover */
+}
+
+  /* Active Tool */
+.active-tool {
+    position: absolute;
+    top: 15px; /* Adjusted top position */
+    left: 20px; /* Adjusted left position */
+    background-color: #bd3c3c;
+    color:#000000;
+}
+
+.active-tool > span {
+    background-color: #bd3c3c; /* Changed background color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 5px 16px; /* Adjusted padding */
+    color: #000000;
+    font-size: 25px; /* Adjusted font size */
+    user-select: none;
+}
+
+  /* Tool Styles */
+.tool {
+    position: relative;
+    top: 3px; /* Adjusted top position */
+}
+
+.tool:not(:first-child) {
+    margin-left: 15px; /* Increased margin between tools */
+}
+
+.brush {
+    height: 50px;
+    width: 380px;
+}
+
+.brush > * {
+    margin-left: 15px;
+} 
+
+.size {
+    min-width: 50px; /* Increased minimum width */
+    height: 40px; /* Increased height for better spacing */
+    position: relative;
+    top: 5px;
+    left: -10px; 
+    background-color: #bd3c3c; /* Changed background color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 5px 12px; /* Adjusted padding */
+    color: #ffffff;
+    font-size: 22px; 
+    user-select: none;
+}
+
+  /* Custom Slider */
+.slider {
+    -webkit-appearance: none;
+    position: relative;
+    left: -8px;
+    width: 100px; /* Decreased width for a smaller slider */
+    height: 10px; /* Decreased height for a thinner slider */
+    background: #3498db; /* Changed slider background color to a more appealing blue */
+    outline: none;
+    opacity: 0.8; /* Slightly increased opacity */
+    cursor: pointer;
+    transition: opacity 0.2s;
+    border-radius: 3px; /* Added some border-radius for a softer look */
+    background-color: #333;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px; /* Decreased thumb size */
+    height: 14px; /* Decreased thumb size */
+    background: #fff; /* Changed thumb color to white */
+    border-radius: 50%;
+    border: 2px solid #3498db; /* Added a border to the thumb */
+}
+
+.slider::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid #3498db;
+}
+
+  /* Custom Color Picker */
+.jscolor {
+    border-style: solid;
+    border-radius: 5px;
+    height: 35px;
+    width: 100px;
+    margin-left: 3px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+}
+
+  /* Canvas */
+canvas#canvas {
+    position: absolute;
+    top: 80px; /* Adjusted top position to match top bar height */
+    cursor: crosshair;
+    z-index: 10;
+}
+
+  /* Mobile Message */
+.mobile-message {
+    display: none;
+}
+
+/* Media Query: Mobile Devices */
+@media screen and (max-width: 800px) {
+    .mobile-message {
+        position: fixed; /* Changed to 'fixed' to ensure it stays visible even when scrolling */
+        top: 0; /* Position it at the top of the viewport */
+        left: 0;
+        height: 100%; /* 100% height of the viewport */
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9); /* Added some transparency to the background */
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        z-index: 100;
+    }
+}
